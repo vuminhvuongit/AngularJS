@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<article class="row" id="article_table">
+			<section class="col-md-2"></section>
+			<section class="col-md-8">
+				<h1>{{detailProduct.model | uppercase}}'s Detail</h1>
+				<table class="table table-bordered table-striped">
+					<tr>
+						<td>Model</td>
+						<td>{{detailProduct.model}}</td>
+					</tr>
+					<tr>
+						<td>Year</td>
+						<td>{{detailProduct.year}}</td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>{{detailProduct.price}}</td>
+					</tr>
+					<tr>
+						<td>Producer</td>
+						<td>{{detailProduct.producer}}</td>
+					</tr>
+					<tr>
+						<td>Available</td>
+						<td>{{detailProduct.available}}</td>
+					</tr>
+				</table>
+				<button class="btn btn-primary" type="button">
+					<a id="custom_color" href="#/products">
+						<span class="glyphicon glyphicon-arrow-left">Back</span>
+					</a>
+				</button>
+			</section>
+		</article>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angularjs Tutorial and Spring Boot</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/fresherangular/css/app.css">
+	<script src="/fresherangular/js/bootstrap.min.js"></script>
+	<script src="/fresherangular/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="/fresherangular/css/bootstrap.min.css">
+	<script src="/fresherangular/js/3bc008ec60.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Administrator Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      	<li><a href="#/products">Products</a></li>
+        <li><a href="#/users">Users</a></li>
+        <li><a href="#/roles">Roles</a></li>
+        <li><a href="#/main">Github Service example</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div ng-view></div>
+<section class="footer row">
+	<section class="col-md-2"></section>
+	<section class="col-md-8">
+		<ul>
+			<li>Fresher: Vũ Minh Vương</li>
+			<li><i class="fa fa-facebook" aria-hidden="true"></i> <a href="https://www.facebook.com/vu.vuong.39108">Vũ Minh Vương</a></li>
+			<li><span class="glyphicon glyphicon-envelope"></span> vuminhvuongit@gmail.com</li>
+			<li><span class="glyphicon glyphicon-phone"></span> 01642606575</li>
+		</ul>
+	</section>
+	<section class="col-md-2"></section>
+</section>
+<script src="../../fresherangular/js/lib/angular-1.4.9/angular.js"></script>
+<script src="../../fresherangular/js/lib/angular-1.4.9/angular-resource.js"></script>
+<script src="../../fresherangular/js/lib/angular-1.4.9/angular-route.js"></script>
+
+<script src="/fresherangular/js/app.js"></script>
+
+<script src="/fresherangular/js/service/githubService.js"></script>
+
+<script src="/fresherangular/js/controller/controller.js"></script>
+<script src="/fresherangular/js/controller/MainController.js"></script>
+<script src="/fresherangular/js/controller/RepoController.js"></script>
+<script src="/fresherangular/js/controller/UserController.js"></script>
+<script src="/fresherangular/js/controller/stores/myAngular.js"></script>
+
+
+
+</body>
+</html>

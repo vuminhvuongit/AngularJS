@@ -1,0 +1,113 @@
+<section class="container">
+		<section class="row">
+			<section class="col-md-2"></section>
+			<section class="col-md-8">
+				<form class="form-horizontal css-form" name="myForm" ng-submit="AddProduct()">
+					<h3>Add new product</h3>
+					<label>Model:</label>
+					<input type="text" class="form-control" ng-model="model" required />
+					<label>Year:</label>
+					<input type="text" class="form-control" ng-model="year" required />
+					<label>Price:</label>
+					<input type="text" class="form-control" ng-model="price" required/>
+					<label>Producer:</label>
+					<input type="text" class="form-control" ng-model="producer"  required />
+					<label>Available:</label>
+					<input name="available" type="text" pattern="[0-9]+" class="form-control" ng-model="available" required /><br>
+					<div ng-show="myForm.available.$dirty && myForm.available.$invalid">
+						<span ng-show="myForm.available.$error.required">Fill out... pls</span>
+						<span ng-show="myForm.available.$error.pattern">Number... please</span>
+					</div>
+					<button type="submit" ng-disable="myForm.$invalid" class="btn btn-primary">Add</button>
+					<button class="btn btn-primary" ng-click="showTableEnable=true;" type="button">Search All</button>
+				</form>
+			</section>
+			<section class="col-md-2"></section>
+	</section>
+	<article>
+		<article id="article_table" ng-show="showTableEnable">
+			<section class="row">
+					<section class="col-md-2"></section>
+					<section class="col-md-8">
+						<h1>Product List</h1>
+						<h5>This is product list</h5>
+					</section>
+					<section class="col-md-2"></section>
+			</section>
+			<section class="row">
+				<section class="col-md-2"></section>
+				<section class="col-md-8">
+				<div class="form-inline">
+					<label>Search: </label><input class="form-control" type="text" ng-model="text_filter" value="" />
+				</div><br>
+				<table id="tableData" class="table table-bordered table-striped">
+					<tr>
+						<th ng-click="orderByMe('model')">Model</th>
+						<th ng-click="orderByMe('year')">Year</th>
+						<th ng-click="orderByMe('price')">Price</th>
+						<th ng-click="orderByMe('producer')">Producer</th>
+						<th ng-click="orderByMe('total')">Available</th>
+						<th>Action</th>
+					</tr>
+					<tr ng-repeat="product in products | filter : text_filter | orderBy:myOrderBy">
+						<!--<td><a class="a_detail" ng-click="detail(product.id)">{{product.model | uppercase}}</a></td>-->
+						<td><a href="#/detail/{{product.id}}">{{product.model | uppercase}}</a></td>
+						<td>{{product.year}}</td>
+						<td>{{product.price | currency}}</td>
+						<td>{{product.producer}}</td>
+						<td class="form-inline">
+							<div class="form-group">
+								<button ng-click="addTotal(product.id)" class="btn btn-success">
+									<span style="color:white" class="glyphicon glyphicon-plus"></span>
+								</button>
+								<input ng-dblclick="editAvailable(product.id)" 
+								ng-blur="updateAvailable(product.id)"
+								class="form-control number_input" id="number_input_{{product.id}}" 
+								type="text" readonly="readonly" value="{{product.available | number}}"/>
+								<button ng-disabled="product.available==0" ng-click="minusTotal(product.id)" class="btn btn-warning">
+									<span style="color:white" class="glyphicon glyphicon-minus"></span>
+								</button>
+							</div>
+						</td>
+						<td>
+							<button ng-click='remove(product.id)' type="button" class="btn btn-danger">
+								<span style="color:white" class="glyphicon glyphicon-glyphicon glyphicon-trash"></span>
+							</button>
+						</td>
+					</tr>
+					</table>
+					</section>
+					<section class="col-md-2"></section>
+			</section>
+		</article>
+		<article class="row" id="article_table" ng-show="!showTableEnable && showDetail">
+			<section class="col-md-2"></section>
+			<section class="col-md-8">
+				<h1>{{detailProduct.model | uppercase}}'s Detail</h1>
+				<table class="table table-bordered table-striped">
+					<tr>
+						<td>Model</td>
+						<td>{{detailProduct.model}}</td>
+					</tr>
+					<tr>
+						<td>Year</td>
+						<td>{{detailProduct.year}}</td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>{{detailProduct.price}}</td>
+					</tr>
+					<tr>
+						<td>Producer</td>
+						<td>{{detailProduct.producer}}</td>
+					</tr>
+					<tr>
+						<td>Available</td>
+						<td>{{detailProduct.available}}</td>
+					</tr>
+				</table>
+				<button class="btn btn-primary" ng-click="showTableEnable=true;showDetail=false" type="button">Back</button>
+			</section>
+		</article>
+	</article>
+</section>

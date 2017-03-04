@@ -1,0 +1,50 @@
+body {
+	height: 100%;
+}
+.menu-list{
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.home-section{
+    float:left;
+    width: 10%;
+}
+.section{
+    margin-left: 10%;
+    float:left;
+}
+.photo{
+    padding-right: 5px;
+}
+
+.css-form .ng-valid.ng-dirty{
+	background-color: green;
+}
+.css-form .ng-invalid.ng-dirty{
+	background-color: red;
+}
+
+.a_detail {
+	color:#0080ff!important;
+}
+.a_detail:hover {
+	text-decoration: underline !important;
+	cursor: pointer;
+}
+
+
+
+.number_input{
+	width: 50% !important;
+}
+#number_input_*{
+	width: 50% !important;
+}
+section.footer{
+    position: relative;
+    background-color: #efefef;
+    margin-top: 6em;	  
+}
+#custom_color{
+	color: white !important;
+}
